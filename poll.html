@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--
+Jose Meza
+Assignment #4
+September 10 2018
+This is template page -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Free Web tutorials">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Jose Meza">
+    <meta name="robots" content=" ">
+    <title>Home Page</title>
+    <title>Template</title>
+
+</head>
+<body>
+<nav>
+    <a href="index.html">Home</a> |
+    <a href="awards.html">Awards</a> |
+    <a href="activities.html">Activities</a> |
+    <a href="meals.html">Meals</a> |
+    <a href="keynote.html">Keynote</a> |
+    <a href="workshopSchedule.html">Workshops</a> |
+    <a href="registration.html">Registration</a> |
+    <a href="admin.html">Admin</a>|
+
+    <link href="style.css" rel="stylesheet"/>
+</nav>
+
+<h1>Poll</h1>
+<form >
+    <fieldset>
+        <legend>Please Vote on the award you like to win</legend>
+        <input type="radio" id="vote1" name="poll">
+        <label for="vote1">Iphone</label>
+        <span id = "votes1">0</span> votes <br/>
+        <input type="radio" id="vote2" name="poll">
+        <label for="vote2">Galaxy</label>
+        <span id = "votes2">0</span> votes <br/>
+        <input type="radio" id="vote3" name="poll">
+        <label for="vote3">Pixel</label>
+        <span id = "votes3">0</span> votes <br/>
+        <input type="submit" value="submit" onclick="submitVote()"/>
+
+    </fieldset>
+</form>
+<div id="svgAttributes"> <svg width="128" height="128" >
+    <polygon points="64 69.88966727473019 8.574 99.91579061491036 62.29081565534038 66.92885228500046 64 3.9157906149103647 65.70918434465962 66.92885228500046 119.426 99.91579061491036 " fill="currentColor"></polygon>
+</svg> </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script>
+<script src = "anime.js"></script>
+<footer> Contact us. Address: 4593 S Grove St, 80232 Email: jose@gmail.com Telephone: 398-381-9328
+    <p>While this website was created to satisfy the requirements of building a website for an academic course at Regis
+        University the views and opinions expressed on is are solely those of the original author and do not necessarily
+        represent the views and opinions of Regis University.</p>
+</footer>
+
+<script>
+
+
+
+    window.onload = initializeVotes();
+
+
+    function initializeVotes() {
+        var vote1 = document.getElementById("vote1");
+        var vote2 = document.getElementById("vote2");
+        var vote3 = document.getElementById("vote3");
+        var name = vote1.id.trim();
+        var votes = getVoteFromCookie(name);
+        var span = document.getElementById("votes1");
+        span.innerText = votes;
+        name = vote2.id.trim();
+        votes = getVoteFromCookie(name);
+        span = document.getElementById("votes2");
+        span.innerText = votes;
+        name = vote3.id.trim();
+        votes = getVoteFromCookie(name);
+        span = document.getElementById("votes3");
+        span.innerText = votes;
+
+
+    }
+
+    function submitVote() {
+        var vote1 = document.getElementById("vote1");
+        var vote2 = document.getElementById("vote2");
+        var vote3 = document.getElementById("vote3");
+
+        if(vote1.checked) {
+            alert("thank you for voting for Iphone");
+            var keyName = vote1.id.trim();
+            var votes = getVoteFromCookie(keyName);
+            votes++;
+            updateCookie(keyName, votes);
+            var span = document.getElementById("votes1");
+            span.innerText = votes;
+        }
+        if(vote2.checked) {
+            alert("thank you for voting for Galaxy!");
+            keyName = vote2.id.trim();
+            votes = getVoteFromCookie(keyName);
+            votes++;
+            updateCookie(keyName, votes);
+            span = document.getElementById("votes2");
+            span.innerText = votes;
+        }
+        if(vote3.checked) {
+            alert("thank you for voting for Pixel");
+            keyName = vote3.id.trim();
+            votes = getVoteFromCookie(keyName);
+            votes++;
+            updateCookie(keyName, votes);
+            span = document.getElementById("votes3");
+            span.innerText = votes;
+        }
+
+        return false;
+
+    }
+
+    function getVoteFromCookie(keyName) {
+        var cookies = document.cookie;
+        var cookieArray = cookies.split(';');
+        var length = cookieArray.length;
+        for(var i = 0; i < length; i++) {
+            var nameValue = cookieArray[i].split('=');
+            var name = nameValue[0].trim();
+            var value = nameValue[1].trim();
+            if (keyName === name)
+                return parseInt(value);
+
+        }
+
+        return 0
+    }
+
+    function updateCookie(keyName, votes) {
+        document.cookie = keyName + "=" + votes;
+    }
+
+</script>
+</body>
+</html>

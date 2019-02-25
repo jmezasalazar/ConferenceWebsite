@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<!--
+Jose Meza
+Assignment #4
+September 10 2018
+This is template page -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Free Web tutorials">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Jose Meza">
+    <meta name="robots" content=" ">
+    <title>Home Page</title>
+    <title>Template</title>
+
+</head>
+<body>
+<nav>
+    <a href="index.html">Home</a> |
+    <a href="awards.html">Awards</a> |
+    <a href="activities.html">Activities</a> |
+    <a href="meals.html">Meals</a> |
+    <a href="keynote.html">Keynote</a> |
+    <a href="workshopSchedule.html">Workshops</a> |
+    <a href="registration.html">Registration</a> |
+    <a href="admin.html">Admin</a>|
+
+    <link href="style.css" rel="stylesheet"/>
+</nav>
+
+
+<h1>Registration</h1>
+
+<form onsubmit="return submitRegistrationForm()" class="center" action = "thankyou.html">
+    <fieldset style="width: 75%" class="center">
+        <legend>Personal Registration</legend>
+        <label>Conference ID:</label>
+        <input type="text" name="confId" id="confId" maxlength="6" placeholder="Conference Id" title="6 digit conference ID" onblur="return checkId()">
+        <label><br> First Name:
+            <input type="text" name="first_name" id="info0" required placeholder="First Name" size="20"
+                   pattern="([a-zA-Z])+">
+        </label>
+         <label> Last Name:
+              <input type="text" name="last_name" id="info1" required placeholder="Last Name" size="20"
+                     pattern="([a-zA-Z])+">
+
+          </label><br>
+          <label> Salutation
+              <select id="info2">
+                  <option></option>
+                  <option>Mr.
+                  <option>Mrs.
+                  <option>Ms.
+
+              </select>
+
+
+          </label><br>
+    </fieldset>
+    <fieldset style="width: 75%" class="center">
+        <legend>Personal</legend>
+          <label>Address Line 1</label>
+          <input type="text" name="address_1" id="info3" required placeholder="Address" size="75"
+                 pattern="[a-zA-Z0-9\ \#]+"> <br>
+          <label>Address Line 2</label>
+          <input type="text" name="address_2" id="info4" placeholder="Address" size="75"
+                 pattern="[a-zA-Z0-9\ \#]+"> <br>
+          <label>City</label>
+          <input type="text" name="city" id="info5" required placeholder="City" size="30"
+                 pattern="([a-zA-Z])+">
+          <label> State
+              <select id = "info21">
+                  <option></option>
+                  <option value="AL">Alabama</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AZ">Arizona</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CA">California</option>
+                  <option value="CO">Colorado</option>
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="DC">District Of Columbia</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="HI">Hawaii</option>
+                  <option value="ID">Idaho</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IN">Indiana</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NV">Nevada</option>
+                  <option value="NH">New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="OH">Ohio</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="OR">Oregon</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="TX">Texas</option>
+                  <option value="UT">Utah</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WA">Washington</option>
+                  <option value="WV">West Virginia</option>
+                  <option value="WI">Wisconsin</option>
+                  <option value="WY">Wyoming</option>
+              </select>
+          </label>
+          <label>Zip Code</label>
+          <input type="text" name="zip_code" id="info6" required placeholder="Zip Code" size="10"
+                 pattern="[0-9]{5}\-[0-9]{4}"> <br>
+          <label>Telephone:</label>
+          <input type="text" name="telephone" id="info7" required placeholder="Telephone" size="13"
+                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+          <label> Email:</label><input type="text" name="email" id="info8" required placeholder="Email" size="30">
+          <h3>Company Information</h3>
+          <label> Company name </label> <input type="text" name="company" id="info9" placeholder="Company"
+                                               Size="30">
+          <label> Company Website </label> <input type="text" name="website" id="info10" placeholder="Website Url"
+                                                  Size="30"><br>
+          <label>Position in Company</label><input type="text" name="position" id="info11"
+                                                   placeholder="Position in Company" size = "40" maxlength="20">
+          <h3>Meal Plans</h3>
+          <label>Would you want the Full Meal Package?</label> <br>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="yesmeal"> Yes </label><input type="radio" name="meal" id="yesmeal" required>
+          <label for="nomeal">No</label><input type="radio" name="meal" id="nomeal" required><br>
+          <label>Would you want to purchase the meal for day 2?</label><br>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="yesmeal2"> Yes </label><input type="radio" name="meal" id="yesmeal2" required>
+          <label for="nomeal2">No</label><input type="radio" name="meal" id="nomeal2" required>
+
+
+    </fieldset>
+
+    <fieldset style="width: 75%" class="center">
+        <legend>Work Shops</legend>
+        <h4>Session 1</h4>
+        <input type="radio" id="ws1" name="session1">
+        <label for="ws1">Home Button?</label>
+        <input type="radio" id="ws2" name="session1">
+        <label for="ws2">GalaxyForever</label>
+        <input type="radio" id="ws3" name="session1">
+        <label for="ws3">Green Bubble</label>
+        <h4>Session 2</h4>
+        <input type="radio" id="ws4" name="session2">
+        <label for="ws4">IphoneInfinity</label>
+        <input type="radio" id="ws5" name="session2">
+        <label for="ws5">TroubleShooting</label>
+        <input type="radio" id="ws6" name="session2">
+        <label for="ws6">AndroidHelp</label>
+        <h4>Session 3</h4>
+        <input type="radio" id="ws7" name="session3">
+        <label for="ws7">Tips</label>
+        <input type="radio" id="ws8" name="session3">
+        <label for="ws8">Gadgets</label>
+        <input type="radio" id="ws9" name="session3">
+        <label for="ws9">Pixels+</label>
+
+    </fieldset>
+    <fieldset style="width: 75%" class="center">
+
+        <legend>Billing</legend>
+        <label> Billing First Name
+            <input type="text" name="Bfirst_name" id="info20" required placeholder="First Name" size="20"
+                   pattern="([a-zA-Z])+">
+        </label>
+        <label> Billing Last Name
+            <input type="text" name="Blast_name" id="info12" required placeholder="Last Name" size="20"
+                   pattern="([a-zA-Z])+">
+        </label><br>
+        <label>Card Type</label> <br>
+        <label for="info13">Visa</label><input type="radio" id="info13" required name="card">
+        <label for="info14">American Express</label><input type="radio" id="info14" required name="card">
+        <label for="info15">Master Card</label><input type="radio" id="info15" required name="card"><br>
+        <label>Card Number</label>
+        <input type="text" name="cardNum" id="info16" required placeholder="Card Number" size ="20" pattern="[0-9]{16}">
+        <label>CVS Code</label>
+        <input type="text" name="code" id="info17" required placeholder="CVS" size="5" pattern="[0-9]{4}">
+        <label>Exp date: </label>
+        <input type="text" name="expYear" id="info18" required placeholder="Year" size="5" pattern="[2][0]([1-2][6-9])">
+        <input type="text" name="expMonth" id="info19" required placeholder="Month" size="5" pattern="(0[1-9]|1[0-2])">
+    </fieldset>
+
+    <input type="submit" value="submit" onclick="return validateForm()" >
+</form>
+
+<script>
+    function validateForm() {
+        var ws2 = document.getElementById("ws2").checked;
+        var ws4 = document.getElementById("ws4").checked;
+        var ws5 = document.getElementById("ws5").checked;
+        var ws6 = document.getElementById("ws6").checked;
+        var ws7 = document.getElementById("ws7").checked;
+        var ws8 = document.getElementById("ws8").checked;
+        var ws9 = document.getElementById("ws9").checked;
+        var errorMsg = "";
+
+        if (ws2 === true) {
+            if (ws4 || ws5 || ws6) {
+                errorMsg = "Galaxy Forever does not allow you in session 2";
+            }
+        }
+        if(ws8 === true){
+            if(ws6 !== true){
+                errorMsg = "Cannot take gadgets without taking AndroidHelp ";
+            }
+        }
+
+        if(ws6 === true) {
+            if(ws7 || ws9) {
+                errorMsg = "you have to to take gadgets if you chose AndroidHelp"
+            }
+
+
+        }
+
+        if (errorMsg !== "") {
+            displayErrorMsg(errorMsg);
+            return false;
+            }
+        return true;
+
+    }
+
+    function displayErrorMsg(errorMessage) {
+        localStorage.setItem("error", errorMessage);
+
+        var x = (screen.availWidth - 500) / 2;
+        var y = (screen.availHeight - 400) / 2;
+
+        window.open('error.html', '_blank', 'width=500px,height=400, left =' + x + ',top=' + y);
+
+
+    }
+
+    function submitRegistrationForm() {
+        setCookie();
+        return true;
+    }
+
+    function setCookie() {
+        var confId = document.getElementById("confId").value.trim();
+        if (confId !== "123456") {
+            alert("wrong conf ID");
+            return true;
+        }
+
+        var info = "info";
+        var cookies = "";
+        var cookie = "";
+        for(var x = 0; x < 22; x++) {
+            var ids = info + x;
+            cookie = document.getElementById(ids).value;
+            cookie.trim();
+            cookies = cookies + ids + ':' + cookie + '#';
+            cookie.trim();
+        }
+
+        document.cookie  = "123456" + "=" + cookies ;
+    }
+
+    function getDataFromCookie(key) {
+        var cookies = document.cookie.split(";");
+
+        for(var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].split("=");
+            var name = cookie[0].trim();
+            if(name === key){
+                return cookie[1].trim();
+            }
+        }
+        return "";
+    }
+
+    function populateRegFormWithData(data) {
+        var keyValues = data.split("#");
+        for(var i = 0; i < keyValues.length; i++) {
+            var keyValue = keyValues[i].split(":");
+            var key = keyValue[0].trim();
+            var value = keyValue[1].trim();
+            document.getElementById(key).value = value;
+        }
+    }
+
+    function checkId() {
+        var confId = document.getElementById("confId").value.trim();
+
+        if(confId === "123456") {
+            var data = getDataFromCookie(confId);
+
+        }
+        populateRegFormWithData(data);
+
+    }
+
+</script>
+<footer> Contact us. Address: 4593 S Grove St, 80232 Email: jose@gmail.com Telephone: 398-381-9328
+    <p>While this website was created to satisfy the requirements of building a website for an academic course at Regis
+        University the views and opinions expressed on is are solely those of the original author and do not necessarily
+        represent the views and opinions of Regis University.</p></footer>
+</body>
+</html>

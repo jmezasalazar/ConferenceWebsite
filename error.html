@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<!--
+Jose Meza
+Assignment #4
+September 10 2018
+This is template page -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Free Web tutorials">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Jose Meza">
+    <meta name="robots" content=" ">
+    <title>Home Page</title>
+    <title>Template</title>
+
+</head>
+<body>
+<body>
+<h1> Entry Error </h1>
+<div id="errorMsg"> </div>
+<button onclick="window.close()">Close</button>
+</body>
+
+<script>
+    var error = localStorage.getItem("error");
+
+    document.getElementById("errorMsg").innerHTML=error;
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+body {
+    background-color: lightgrey;
+    border: double;
+
+}
+h1 {
+    font-size: 128px;
+    color: Black;
+    background-color: white;
+    text-align: center;
+}
+p {
+    color: Black;
+}
+nav {
+    font-size: 28px;
+    color: black;
+    text-align: center;
+
+}
+
+fieldset+input {
+
+}
+
+blockquote {
+    text-align: center;
+    font-size: 128px;
+}
+
+.bold {
+    font-size: 28px;
+    color: black;
+    text-align: center;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 15px;
+}
+
+.cent {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+
+}
+
+.borders {
+    border: 1px solid black;
+    border-collapse: collapse;
+
+}
+
+
+.menu {
+    display: inline-block;
+
+}
+
+.pricing {
+    float: none;
+}
+
+.keynote {
+   width: 30%;
+    display: inline-block;
+}
+
+
+footer {
+    outline-style: groove;
+    outline-color: black;
+    font-size: 12px;
+    color: black;
+    background-color: pink;
+    text-align: center;
+}
+
+
+
+fieldset:hover {
+    background-color: rgba(0, 100, 200, 0.45);
+}
+
+input:focus {
+    background-color: skyblue;
+    border: dotted;
+
+}
